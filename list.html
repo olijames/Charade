@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Charades</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" onclick="hide('score')">Score</a></li>
+          <li class="navbar-item"><a class="navbar-link"  onclick="hide('timer')">Timer</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <div class="container">
+
+    <div id="list" class="header ten columns offset-by-one" onclick="ocillate()">
+      <img id="ico" src="images/blank.fw.png" height="50">
+      <h1 id="name" class="title">Charades</h1>
+      <h5 id="details">click to start</h5>
+      <h1 id="pause" class="title hide">Hidden</h1>
+      <h5 id="paused" class="hide">click to show</h5>
+    </div>
+    <div class="row tags">
+      <a class="tag three offset-by-one columns right" onclick="moreInfo()"><p>info</p></a>
+      <a class="tag three offset-by-one columns" onclick="hide('cat')"><p>categories</p></a>
+      <a class="tag three offset-by-one columns left" onclick="pause()"><p>hide</p></a>
+    </div>
+  </div>
+    
+    <footer class="">
+     
+    <div id="cat" class="hide">
+      <div class="container">
+        <div class="three offset-by-one columns">
+          <img src="images/film.fw.png" width="50">
+          <button id="imdb250" onclick="toggleCat('imdb250')" class="selected">IMDB Top 250</button>
+        </div>
+        <div class="three offset-by-one columns">
+          <img src="images/music.fw.png" width="50">
+          <button id="rsalbums" onclick="toggleCat('rsalbums')" class="selected">RSM Albums</button>
+          <button id="rssongs" onclick="toggleCat('rssongs')">RSM Songs</button>
+        </div>
+        <div class="three offset-by-one columns">
+          <img src="images/tv.fw.png" width="50">
+          <button id="imdbTv" onclick="toggleCat('imdbTv')" >IMDB Highest Rated Tv</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="three offset-by-one columns">
+          <img src="images/play.fw.png" width="50">
+          <button id="stage" onclick="toggleCat('stage')">Stage Plays</button>
+          <button id="musicals" onclick="toggleCat('musicals')">Musicals</button>
+        </div>
+        <div class="three offset-by-one columns">
+          <img src="images/book.fw.png" width="50">
+          <button id="mlboard" onclick="toggleCat('mlboard')">Modern Library Board Picks</button>
+          <button id="mlfans" onclick="toggleCat('mlfans')" >Modern Library Fan Picks</button>
+        </div>
+        <div class="three offset-by-one columns">
+          <img src="images/person.fw.png" width="50">
+          <button id="famous" onclick="toggleCat('famous')" >100 Most Famous</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="three offset-by-one columns">
+          <img src="images/place.fw.png" width="50">
+        </div>
+
+        
+      </div>
+     </div>
+     <div class="container">
+      <div id="timer" class="hide">
+          <div class="row">
+            <div class="four offset-by-four columns clock"><h2 id="countdown">&nbsp</h2></div>
+          </div> 
+          <button onclick="timer(91)" class="three offset-by-one columns"><b>90</b>s</button>
+          <button onclick="timer(121)" class="three offset-by-one columns"><b>120</b>s</button>
+          <button onclick="timer(151)" class="three offset-by-one columns"><b>150</b>s</button>
+      </div>
+     </div>
+     <div class="container">
+      <div id="score" class="hide score">
+          <div class="three offset-by-one columns">
+            <h4 class="green">Team 1</h4>
+            <h2><a onclick="down('one')">- </a><span id="one">0</span><a onclick="up('one')"> +</a></h2>
+          </div>
+          <div class="three offset-by-one columns">
+            <h4 class="blue">Team 2</h4>
+            <h2><a onclick="down('two')">- </a><span id="two">0</span><a onclick="up('two')"> +</a></h2>
+          </div>
+          <div class="three offset-by-one columns">
+            <h4 class="orangered">Team 3</h4>
+            <h2><a onclick="down('three')">- </a><span id="three">0</span><a onclick="up('three')"> +</a></h2>
+          </div>
+      </div>
+     </div>
+    </footer>
+  </div>
+
+  <script src="js/movies.js" type="text/javascript" ></script>
+  <script src="js/music.js" type="text/javascript" ></script>
+  <script src="js/people.js" type="text/javascript" ></script>
+  <script src="js/tv.js" type="text/javascript" ></script>
+  <script src="js/books.js" type="text/javascript" ></script>
+    <script>
+
+    function ocillate() {
+      writeOut(imdb250);
+      writeOut(rsalbums);
+      writeOut(rssongs);
+      writeOut(famous);
+      writeOut(imdbTv);
+      writeOut(mlfans);
+      writeOut(mlboard);
+      writeOut(stage);
+      writeOut(musicals);      
+    }
+
+    function writeOut(a) {
+      for(i = 0; i < a.length; i++) {
+        list.innerHTML = list.innerHTML + '<h5>' + a[i][0] + ' - ' + a[i][1] + '<h5>';
+      }
+    }
+
+ 
+    
+  </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

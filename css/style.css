@@ -1,0 +1,108 @@
+.header {
+	margin-top: 5%;
+	margin-bottom: 3rem;
+	text-align: center;
+	cursor: pointer;
+}
+
+a {
+	color:#33C3F0;
+	font-weight: 400;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tags {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.clock {
+	text-align: center;
+}
+
+.tags h2 {
+	text-align: center;
+}
+
+.hide {
+	display: none;
+}
+
+
+footer {
+	text-align: center;
+}
+
+button {
+	width:100%;
+}
+
+button b {
+	font-weight: 700;
+}
+
+button.selected {
+	border-color:#33C3F0;
+	color:#33C3F0; 
+}
+
+h4.green {
+	color:#6ce26c;
+}
+
+h4.orangered {
+	color:orangered;
+}
+
+h4.blue {
+	color:#33C3F0;
+}
+
+.score a{
+	font-size: 5rem;
+	padding:10px;
+}
+
+.navbar-list {
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.navbar .navbar-item {
+	position: relative;
+	float:right;
+	margin: 25px;
+	text-decoration: none;
+}
+
+.container {
+	margin-bottom: none;
+}
+
+@media (min-width: 300px) {
+  .tag.one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .tag.two.columns                    { width: 13.3333333333%; }
+  .tag.three.columns                  { width: 22%;            }
+  .tag.four.columns                   { width: 30.6666666667%; }
+
+  .tag.offset-by-one.column,
+  .tag.offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .tag.offset-by-two.column,
+  .tag.offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .tag.offset-by-three.column,
+  .tag.offset-by-three.columns        { margin-left: 26%;            }
+  .tag.offset-by-four.column,
+  .tag.offset-by-four.columns         { margin-left: 34.6666666667%; }
+}
+
+@media (min-width: 959px) {
+	.right {
+		text-align: right;
+	}
+
+	.left {
+		text-align: left;
+	}
+}
